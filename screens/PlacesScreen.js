@@ -27,7 +27,7 @@ export default function PlacesScreen() {
       longitude: data.features[0].geometry.coordinates[0],
       latitude: data.features[0].geometry.coordinates[1]
         }
-      dispatch(addCity({newCity}))}
+      dispatch(addCity(newCity))}
   })
   setAddCityName('')
 };
