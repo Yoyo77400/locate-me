@@ -21,10 +21,11 @@ export default function PlacesScreen() {
   fetch(`https://api-adresse.data.gouv.fr/search/?q=${addCityName}`)
     .then((res) => res.json())
     .then((data) => {
+      if(data){
       let name =  data.features[0].properties.city
       let longitude = data.features[0].geometry.coordinates[0]
       let latitude= data.features[0].geometry.coordinates[1]
-      dispatch(addCity({name : name , latitude: latitude , longitude: longitude}))
+      dispatch(addCity({name : name , latitude: latitude , longitude: longitude}))}
   })
   setAddCityName('')
 };
